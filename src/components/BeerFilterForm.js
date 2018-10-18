@@ -32,6 +32,7 @@ class BeerFilterForm extends Component {
             const requester = new Requester().requester;
             requester(1, this.store.requestObject, this.store.loadItems);
             this.store.resetPageNumber();
+            this.store.clearFields();
         }
         this.getRandomBeer = () => {
             const request = new Requester().getRandomBeer;

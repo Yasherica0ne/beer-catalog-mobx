@@ -33,6 +33,10 @@ export class MainStore {
         this.selectedItem = item;
     }
 
+    @action clearFields = () => {
+        this.requestObject = new RequestObject();
+    }
+
     @action changeABVValue = event => {
         debugger;
         this.requestObject.ABV.value = event.target.value;
@@ -59,7 +63,7 @@ export class MainStore {
         this.requestObject = CloneObject(this.requestObject);
     }
 
-    @action changeEbcOption = event => {
+    @action changeEBCOption = event => {
         this.requestObject.EBC.added = event.target.value;
         this.requestObject = CloneObject(this.requestObject);
     }
